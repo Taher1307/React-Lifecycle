@@ -57,7 +57,7 @@ class Clock extends Component {
 
   //This method is the Update version of componentDidMount().
   //Just like componentDidMount(), the componentDidUpdate() is called after all of the props are updated. 
-  componentDidUpdate(prevProps,nextProps,snapshot) {
+  componentDidUpdate(prevProps,prevState,snapshot) {
     console.log('componentdidUpdate', prevProps);
   }
 
