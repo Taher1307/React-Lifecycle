@@ -35,9 +35,9 @@ class Clock extends Component {
     return true;
   }
 
-  //This method returns a boolean value if the state or the props of this application change.
-  //If the method return false then the program skips the other lifecycle methods and jumps to componentWillUnmount.
-  //If it returns true then the state and props will update as per the given condition.
+  //if the method returns false then the render method is not called 
+  //if it is true the render method is called and subsequent lifecycle is called.
+  //Doesn't matter what it returns but the state and props will update.
   //Here I've given a condition to return a value just to understand how this method works.
   shouldComponentUpdate(nextProps, nextState) {
     console.log('shouldComponentUpdate', nextProps, nextState);
@@ -57,7 +57,7 @@ class Clock extends Component {
 
   //This method is the Update version of componentDidMount().
   //Just like componentDidMount(), the componentDidUpdate() is called after all of the props are updated. 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps,nextProps,snapshot) {
     console.log('componentdidUpdate', prevProps);
   }
 
